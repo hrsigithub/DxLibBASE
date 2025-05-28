@@ -5,6 +5,11 @@
 int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance,
 	PSTR lpCmdLine, int nCmdShow)
 {
+#ifndef _DEBUG
+	// ログ抑制
+	SetOutApplicationLogValidFlag(FALSE);
+#endif
+
 	int result = ChangeWindowMode(TRUE);		// ウインドモードで起動 640*480
 	SetMainWindowText("DxLibテストだべ。");
 
