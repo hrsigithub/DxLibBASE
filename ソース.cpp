@@ -1,8 +1,10 @@
 
 #include <Dxlib.h>
 
-int main(void) {
-
+//int main(void) 
+int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance,
+	PSTR lpCmdLine, int nCmdShow)
+{
 	int result = ChangeWindowMode(TRUE);		// ウインドモードで起動 640*480
 	SetMainWindowText("DxLibテストだべ。");
 
