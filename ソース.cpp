@@ -1,5 +1,9 @@
 
+#define _USE_MATH_DEFINES
+
 #include <Dxlib.h>
+#include <math.h>
+
 #include "DxLibWrapper.h"
 
 #define RED_COLOR	GetColor(255, 0, 0)
@@ -14,17 +18,13 @@ int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance,
 
 	printfDx("Hello World\n");
 
-	//wr.DrawPixel();
-	//WaitKey(); ClearDrawScreen();
+	//wr.AllDraw();
 
-	wr.DrawLine();
-	WaitKey(); ClearDrawScreen();
-
-	wr.DrawBox();
-	wr.DrawCircle();
-	wr.DrawTriangle();
+	//wr.sin_cosCurve(Curve::sin);
+	//wr.sin_cosCurve(DxLibWrapper::Curve::sin);
+	//wr.sin_cosCurve(DxLibWrapper::Curve::cos);
+	wr.circleCurve();
 	WaitKey();
-
 
 
 

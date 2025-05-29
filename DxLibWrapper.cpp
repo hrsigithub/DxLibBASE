@@ -1,7 +1,11 @@
 // DxLibWrapper.cpp
-#include "DxLibWrapper.h"
-#include <DxLib.h>
 
+#define _USE_MATH_DEFINES
+
+#include <DxLib.h>
+#include <math.h>
+
+#include "DxLibWrapper.h"
 
 DxLibWrapper::DxLibWrapper() {
 
@@ -22,6 +26,28 @@ bool DxLibWrapper::initialize() {
 	if (DxLib_Init() == -1) return true;
 
 	return false; // 成功
+}
+
+// 画面クリア
+void DxLibWrapper::ClearDrawScreenWithWait() {
+	WaitKey(); 
+	ClearDrawScreen();
+}
+
+// 全て描画
+void DxLibWrapper::AllDraw() {
+
+	DrawPixel();
+	ClearDrawScreenWithWait();
+
+	DrawLine();
+	ClearDrawScreenWithWait();
+		
+	DrawBox();
+	DrawCircle();
+	DrawTriangle();
+
+	ClearDrawScreenWithWait();
 }
 
 // 点
@@ -76,5 +102,58 @@ void DxLibWrapper::DrawTriangle() {
 
 	::DrawTriangle(555, 90, 505, 190, 605, 190, COLOR_WHITE, TRUE);
 	DrawTriangleAA(555, 280, 505, 380, 605, 380, COLOR_WHITE, TRUE);
+
+}
+
+// サインカーブ
+void DxLibWrapper::sin_cosCurve(Curve curve) {
+
+	// 軸描画
+	::DrawLine(320, 110, 320, 370, COLOR_GRAY);
+	::DrawLine(30, 240, 610, 240, COLOR_GRAY);
+
+	unsigned int color = curve == Curve::cos ? COLOR_GREEN : COLOR_RED;
+
+	for (int x = -290; x < 290; x++)
+	{
+		int y = curve == Curve::cos ? (int)(cos(M_PI * x / 180.0f) * 100) : 
+										(int)(sin(M_PI * x / 180.0f) * 100);
+	
+		::DrawPixel(320 + x, 240 - y, color);
+	}
+
+	for (int x = -290; x < 290; x+= 10)
+	{
+		int y = curve == Curve::cos ? (int)(cos(M_PI * x / 180.0f) * 100) :
+										(int)(sin(M_PI * x / 180.0f) * 100);
+		::DrawCircle(320 + x, 240 - y, 3, color, TRUE);
+	}
+
+
+}
+
+// 円カーブ
+void DxLibWrapper::circleCurve() {
+
+	// 軸描画
+	::DrawLine(320, 110, 320, 370, COLOR_GRAY);
+	::DrawLine(30, 240, 610, 240, COLOR_GRAY);
+
+	for (int r = -290; r < 290; r++)
+	{
+		int x = (int)(cos(M_PI * r / 180.0f) * 100);
+		int y = (int)(sin(M_PI * r / 180.0f) * 100);
+
+		::DrawPixel(320 + x, 240 - y, COLOR_BLUE);
+	}
+
+	for (int r = -290; r < 290; r += 10)
+	{
+		int x = (int)(cos(M_PI * r / 180.0f) * 100);
+		int y = (int)(sin(M_PI * r / 180.0f) * 100);
+
+		::DrawCircle(320 + x, 240 - y, 3, COLOR_BLUE, TRUE);
+	}
+
 
 }
