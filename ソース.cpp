@@ -6,26 +6,28 @@
 
 #include "DxLibWrapper.h"
 
-#define RED_COLOR	GetColor(255, 0, 0)
+using namespace DxLib;
 
-
-int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance,
+int WINAPI WinMain(
+	HINSTANCE hInstance, 
+	HINSTANCE hPrevInstance,
 	PSTR lpCmdLine, int nCmdShow)
 {
 	DxLibWrapper wr;
 	if (wr.initialize()) return -1;
 
-
 	printfDx("Hello World\n");
 
-	//wr.AllDraw();
+//	wr.AllDraw();
 
-	//wr.sin_cosCurve(Curve::sin);
-	//wr.sin_cosCurve(DxLibWrapper::Curve::sin);
-	//wr.sin_cosCurve(DxLibWrapper::Curve::cos);
-	wr.circleCurve();
+	//wr.vertical_horizontal_amplitude(DxLibWrapper::AmplitudeType::Vertical);
+	//wr.vertical_horizontal_amplitude(DxLibWrapper::AmplitudeType::Horizontal);
+
+	///WaitKey();
+
+	wr.circleCurve(DxLibWrapper::CircleType::Whirlpool);
+
 	WaitKey();
-
 
 
 	DxLib_End();
