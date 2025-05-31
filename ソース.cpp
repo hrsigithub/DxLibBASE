@@ -18,15 +18,16 @@ int WINAPI WinMain(
 
 	printfDx("Hello World\n");
 
-//	wr.AllDraw();
+	//wr.AllDraw();
 
 	//wr.vertical_horizontal_amplitude(DxLibWrapper::AmplitudeType::Vertical);
 	//wr.vertical_horizontal_amplitude(DxLibWrapper::AmplitudeType::Horizontal);
 
-	///WaitKey();
+	//WaitKey();
 
-	wr.circleCurve(DxLibWrapper::CircleType::Whirlpool);
+	//wr.circleCurve(DxLibWrapper::CircleType::Whirlpool);
 
+	wr.TriangleGasket();
 	WaitKey();
 
 
