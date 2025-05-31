@@ -12,13 +12,13 @@ namespace DxLib {
 #define COLOR_GRAY      GetColor(128, 128, 128)
 #define COLOR_GREEN     GetColor(0, 255, 0)
 
-
     class DxLibWrapper {
 
     public:
         enum class WaveType { Sin, Cos };
         enum class AmplitudeType { Vertical, Horizontal };
         enum class CircleType { Circle, Whirlpool };
+        enum class KochType { Curve, Snowflake };
 
 
         DxLibWrapper();
@@ -28,13 +28,15 @@ namespace DxLib {
         void ClearDrawScreenWithWait();
         void AllDraw();
 
-
         void sin_cosCurve(WaveType = WaveType::Cos);
         void vertical_horizontal_amplitude(AmplitudeType, float angle = 4.0f);  // ← デフォルト引数をここに書く
         void circleCurve(CircleType = CircleType::Circle);
 
         // シェルピンスキー・ギャスケット
         void TriangleGasket(int n = 5);
+
+        // コッホ曲線
+        void KochCurveOrSnowflake(KochType = KochType::Curve, int n = 5);
 
     private:
 
@@ -61,9 +63,6 @@ namespace DxLib {
 
         void TriangleGasket(int n, const Pos& a, const Pos& b, const Pos& c);
 
+        void KochCurve(int n, const Pos& a, const Pos& b);
     };
-
-
-
-
 }

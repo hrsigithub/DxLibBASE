@@ -27,9 +27,12 @@ int WINAPI WinMain(
 
 	//wr.circleCurve(DxLibWrapper::CircleType::Whirlpool);
 
-	wr.TriangleGasket();
-	WaitKey();
+	//wr.TriangleGasket();
 
+	wr.KochCurveOrSnowflake();
+	wr.KochCurveOrSnowflake(DxLibWrapper::KochType::Snowflake);
+
+	//WaitKey();
 
 	DxLib_End();
 
