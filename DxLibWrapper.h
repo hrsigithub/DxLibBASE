@@ -19,6 +19,8 @@ namespace DxLib {
         enum class AmplitudeType { Vertical, Horizontal };
         enum class CircleType { Circle, Whirlpool };
         enum class KochType { Curve, Snowflake };
+        enum class HilbertCurveMoveType { Right, Up, Down, Left};
+        enum class HilbertCurveType { LeftDownRight, UpRightDown, RightUpLeft, DownLeftUp};
 
 
         DxLibWrapper();
@@ -38,9 +40,13 @@ namespace DxLib {
         // コッホ曲線
         void KochCurveOrSnowflake(KochType = KochType::Curve, int n = 5);
 
+        // ヒルベルト曲線
+        void HilbertCurve(int n = 7);
+
     private:
 
         struct Pos {
+            float length;
             float x, y;
         };
 
@@ -64,5 +70,11 @@ namespace DxLib {
         void TriangleGasket(int n, const Pos& a, const Pos& b, const Pos& c);
 
         void KochCurve(int n, const Pos& a, const Pos& b);
+
+        // ヒルベルト曲線
+        void HilbertCurveMove(HilbertCurveType, int n, Pos* p);
+        void HilbertCurveMove(HilbertCurveMoveType, Pos* p);
+        void HilbertCurveDrawLineAA(float, float, float, float);
+
     };
 }

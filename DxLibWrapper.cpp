@@ -294,4 +294,121 @@ namespace DxLib {
 			KochCurve(n - 1, d, b);
 		}
 	}
+
+	// ÉqÉãÉxÉãÉgã»ê¸
+	void DxLibWrapper::HilbertCurve(int n) {
+	
+		Pos pos{};
+		const int size = 480;
+		const float startX = 80;
+
+		for (int i = 1; i <= n; i++)
+		{
+			ClearDrawScreen();
+
+			pos.length = (float)(size / pow(2, i));
+			pos.x = startX + size - pos.length / 2.0f;
+			pos.y = pos.length / 2.0f;
+
+			HilbertCurveMove(HilbertCurveType::LeftDownRight, i, &pos);
+
+			WaitKey();
+		}
+	}
+
+	// ÉqÉãÉxÉãÉgã»ê¸ à⁄ìÆ
+	void DxLibWrapper::HilbertCurveMove(HilbertCurveMoveType moveType, Pos* p) {
+
+		switch (moveType)
+		{
+			case HilbertCurveMoveType::Right:
+				HilbertCurveDrawLineAA(p->x, p->y, p->x + p->length, p->y);
+				p->x += p->length;
+				break;
+			case HilbertCurveMoveType::Left:
+				HilbertCurveDrawLineAA(p->x, p->y, p->x - p->length, p->y);
+				p->x -= p->length;
+				break;
+			case HilbertCurveMoveType::Up:
+				HilbertCurveDrawLineAA(p->x, p->y, p->x, p->y - p->length);
+				p->y -= p->length;
+				break;
+			case HilbertCurveMoveType::Down:
+				HilbertCurveDrawLineAA(p->x, p->y, p->x, p->y + p->length);
+				p->y += p->length;
+				break;
+			default:
+				break;
+		}
+	}
+
+	void DxLibWrapper::HilbertCurveDrawLineAA(float x1, float y1, float x2, float y2) {
+		static const int STEP = 64;
+		static const int MAX = 256 / STEP;
+		static int r = MAX, g = MAX, b = MAX;
+		static int rDir = -1, gDir = 1, bDir = -1;
+
+		DrawLineAA(x1, y1, x2, y2, GetColor(r * STEP - 1, g * STEP - 1, b * STEP - 1));
+
+		if ((r += rDir) >= MAX || r <= 0) {
+			r = (r <= 0) ? 1 : MAX;
+			rDir *= -1;
+			if ((g += gDir) >= MAX || g <= 0) {
+				g = (g <= 0) ? 1 : MAX;
+				gDir *= -1;
+			}
+
+			if ((b += bDir) >= MAX || b <= 0) {
+				b = (b <= 0) ? 1 : MAX;
+				bDir *= -1;
+			}
+		}
+	}
+
+	void DxLibWrapper::HilbertCurveMove(HilbertCurveType moveType, int n, Pos* p) {
+
+		if (n > 0) {
+			switch (moveType)
+			{
+			case HilbertCurveType::LeftDownRight:
+				HilbertCurveMove(HilbertCurveType::DownLeftUp, n - 1, p);
+				HilbertCurveMove(HilbertCurveMoveType::Left, p);
+				HilbertCurveMove(HilbertCurveType::LeftDownRight, n - 1, p);
+				HilbertCurveMove(HilbertCurveMoveType::Down, p);
+				HilbertCurveMove(HilbertCurveType::LeftDownRight, n - 1, p);
+				HilbertCurveMove(HilbertCurveMoveType::Right, p);
+				HilbertCurveMove(HilbertCurveType::UpRightDown, n - 1, p);
+				break;
+			case HilbertCurveType::UpRightDown:
+				HilbertCurveMove(HilbertCurveType::RightUpLeft, n - 1, p);
+				HilbertCurveMove(HilbertCurveMoveType::Up, p);
+				HilbertCurveMove(HilbertCurveType::UpRightDown, n - 1, p);
+				HilbertCurveMove(HilbertCurveMoveType::Right, p);
+				HilbertCurveMove(HilbertCurveType::UpRightDown, n - 1, p);
+				HilbertCurveMove(HilbertCurveMoveType::Down, p);
+				HilbertCurveMove(HilbertCurveType::LeftDownRight, n - 1, p);
+				break;
+			case HilbertCurveType::RightUpLeft:
+				HilbertCurveMove(HilbertCurveType::UpRightDown, n - 1, p);
+				HilbertCurveMove(HilbertCurveMoveType::Right, p);
+				HilbertCurveMove(HilbertCurveType::RightUpLeft, n - 1, p);
+				HilbertCurveMove(HilbertCurveMoveType::Up, p);
+				HilbertCurveMove(HilbertCurveType::RightUpLeft, n - 1, p);
+				HilbertCurveMove(HilbertCurveMoveType::Left, p);
+				HilbertCurveMove(HilbertCurveType::DownLeftUp, n - 1, p);
+				break;
+			case HilbertCurveType::DownLeftUp:
+				HilbertCurveMove(HilbertCurveType::LeftDownRight, n - 1, p);
+				HilbertCurveMove(HilbertCurveMoveType::Down, p);
+				HilbertCurveMove(HilbertCurveType::DownLeftUp, n - 1, p);
+				HilbertCurveMove(HilbertCurveMoveType::Left, p);
+				HilbertCurveMove(HilbertCurveType::DownLeftUp, n - 1, p);
+				HilbertCurveMove(HilbertCurveMoveType::Up, p);
+				HilbertCurveMove(HilbertCurveType::RightUpLeft, n - 1, p);
+				break;
+			default:
+				break;
+			}
+		}
+	}
 }

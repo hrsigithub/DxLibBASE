@@ -29,9 +29,10 @@ int WINAPI WinMain(
 
 	//wr.TriangleGasket();
 
-	wr.KochCurveOrSnowflake();
-	wr.KochCurveOrSnowflake(DxLibWrapper::KochType::Snowflake);
+	//wr.KochCurveOrSnowflake();
+	//wr.KochCurveOrSnowflake(DxLibWrapper::KochType::Snowflake);
 
+	wr.HilbertCurve();
 	//WaitKey();
 
 	DxLib_End();
