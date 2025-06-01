@@ -22,7 +22,6 @@ namespace DxLib {
         enum class HilbertCurveMoveType { Right, Up, Down, Left};
         enum class HilbertCurveType { LeftDownRight, UpRightDown, RightUpLeft, DownLeftUp};
 
-
         DxLibWrapper();
 
         bool initialize();

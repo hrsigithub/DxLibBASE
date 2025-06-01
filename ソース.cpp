@@ -5,6 +5,8 @@
 #include <math.h>
 
 #include "DxLibWrapper.h"
+#include "mainGame.h"
+#include "game1.h"
 
 using namespace DxLib;
 
@@ -14,9 +16,10 @@ int WINAPI WinMain(
 	PSTR lpCmdLine, int nCmdShow)
 {
 	DxLibWrapper wr;
+	
 	if (wr.initialize()) return -1;
 
-	printfDx("Hello World\n");
+	//printfDx("Hello World\n");
 
 	//wr.AllDraw();
 
@@ -32,8 +35,13 @@ int WINAPI WinMain(
 	//wr.KochCurveOrSnowflake();
 	//wr.KochCurveOrSnowflake(DxLibWrapper::KochType::Snowflake);
 
-	wr.HilbertCurve();
+	//wr.HilbertCurve();
 	//WaitKey();
+
+	mainGame game;
+	game1 game1;
+
+	game1.GameLoop();
 
 	DxLib_End();
 
