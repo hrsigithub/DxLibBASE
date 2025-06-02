@@ -5,6 +5,8 @@
 #include <math.h>
 
 #include "DxLibWrapper.h"
+
+#include "Shape.h"
 #include "mainGame.h"
 #include "game1.h"
 
@@ -15,7 +17,7 @@ int WINAPI WinMain(
 	HINSTANCE hPrevInstance,
 	PSTR lpCmdLine, int nCmdShow)
 {
-	DxLibWrapper wr;
+	Shape wr;
 	
 	if (wr.initialize()) return -1;
 
@@ -23,17 +25,17 @@ int WINAPI WinMain(
 
 	//wr.AllDraw();
 
-	//wr.vertical_horizontal_amplitude(DxLibWrapper::AmplitudeType::Vertical);
-	//wr.vertical_horizontal_amplitude(DxLibWrapper::AmplitudeType::Horizontal);
+	//wr.vertical_horizontal_amplitude(baseShape::AmplitudeType::Vertical);
+	//wr.vertical_horizontal_amplitude(baseShape::AmplitudeType::Horizontal);
 
 	//WaitKey();
 
-	//wr.circleCurve(DxLibWrapper::CircleType::Whirlpool);
+	//wr.circleCurve(baseShape::CircleType::Whirlpool);
 
 	//wr.TriangleGasket();
 
 	//wr.KochCurveOrSnowflake();
-	//wr.KochCurveOrSnowflake(DxLibWrapper::KochType::Snowflake);
+	//wr.KochCurveOrSnowflake(baseShape::KochType::Snowflake);
 
 	//wr.HilbertCurve();
 	//WaitKey();
@@ -41,7 +43,7 @@ int WINAPI WinMain(
 	mainGame game;
 	game1 game1;
 
-	game1.GameLoop();
+	//game1.GameLoop();
 
 	DxLib_End();
 

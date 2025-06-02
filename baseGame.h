@@ -3,8 +3,6 @@
 #include "Windows.h"
 #include "DxLibWrapper.h"
 
-//using namespace DxLib;
-
 namespace DxLib {
 
     class baseGame :
