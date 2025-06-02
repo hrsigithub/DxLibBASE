@@ -2,13 +2,11 @@
 #define _USE_MATH_DEFINES
 
 #include <Dxlib.h>
-#include <math.h>
 
 #include "DxLibWrapper.h"
 
 #include "Shape.h"
-#include "mainGame.h"
-#include "game1.h"
+#include "ball.h"
 
 using namespace DxLib;
 
@@ -40,10 +38,9 @@ int WINAPI WinMain(
 	//wr.HilbertCurve();
 	//WaitKey();
 
-	mainGame game;
-	game1 game1;
+	ball ball;
 
-	//game1.GameLoop();
+	ball.GameLoop();
 
 	DxLib_End();
 

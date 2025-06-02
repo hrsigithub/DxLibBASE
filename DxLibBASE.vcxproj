@@ -138,8 +138,7 @@
     <ClCompile Include="baseGame.cpp" />
     <ClCompile Include="baseShape.cpp" />
     <ClCompile Include="DxLibWrapper.cpp" />
-    <ClCompile Include="game1.cpp" />
-    <ClCompile Include="mainGame.cpp" />
+    <ClCompile Include="ball.cpp" />
     <ClCompile Include="Shape.cpp" />
     <ClCompile Include="ソース.cpp" />
   </ItemGroup>
@@ -147,8 +146,7 @@
     <ClInclude Include="baseGame.h" />
     <ClInclude Include="baseShape.h" />
     <ClInclude Include="DxLibWrapper.h" />
-    <ClInclude Include="game1.h" />
-    <ClInclude Include="mainGame.h" />
+    <ClInclude Include="ball.h" />
     <ClInclude Include="Shape.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

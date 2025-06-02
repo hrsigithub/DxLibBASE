@@ -1,11 +1,11 @@
 #include <DxLib.h>
-#include "game1.h"
+#include "ball.h"
 
 namespace DxLib {
 
-    game1::game1() {}
+    ball::ball() {}
 
-    void game1::MainGameLoop(Params& params) {
+    void ball::MainGameLoop(Params& params) {
 
         params.x += 0.002f;
 

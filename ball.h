@@ -1,11 +1,12 @@
 #pragma once
+
 #include "baseGame.h"
 
 namespace DxLib {
 
-    class game1 : public baseGame {
+    class ball : public baseGame {
     public:
-        game1();
+        ball();
 
     protected:
         void MainGameLoop(Params& params) override;
