@@ -5,7 +5,16 @@
 namespace DxLib {
 
 	baseGame::baseGame() {
-		fpsTimer = GetNowHiPerformanceCount();
+		fpsTimer = deltaTimer = GetNowHiPerformanceCount();
+	}
+
+	float baseGame::getDeltaTime(LONGLONG* p) {
+		LONGLONG now = GetNowHiPerformanceCount();
+		float deltaTime = (float)(now - *p) / 1000000.0f; // sec
+
+		*p = now;
+
+		return deltaTime;
 	}
 
 	void baseGame::FpsDraw(LONGLONG* p) {

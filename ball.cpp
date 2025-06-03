@@ -15,8 +15,9 @@ namespace DxLib {
     }
 
     void ball::MainGameLoop() {
+        float deltaTime = getDeltaTime(&deltaTimer);
 
-        x += speed;
+        x += speed * deltaTime;
 
         if (x + Radius >= 640.0f) {
             x = 640.0f - Radius;

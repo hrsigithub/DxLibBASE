@@ -14,7 +14,7 @@ namespace DxLib {
 
 	private:
 		static constexpr float Radius = 20.0f;
-		static constexpr float SPEED = 0.01f;
+		static constexpr float SPEED = 640.0f / 2;
 
 		float x;
 		float y;

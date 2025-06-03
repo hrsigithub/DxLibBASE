@@ -14,14 +14,22 @@ namespace DxLib {
         void GameLoop();
 
     protected:
-        LONGLONG fpsTimer;
+        LONGLONG fpsTimer, deltaTimer;
 
+        // オーバーライド禁止
+        virtual float getDeltaTime(LONGLONG*) final;
+
+        // FPS
+        virtual void FpsDraw(LONGLONG*) final;
+
+        //---
+
+        // オーバーライド必須
         virtual void BeforeGameLoop() = 0;
         virtual void MainGameLoop() = 0;
 
-        // FPS
-        void FpsDraw(LONGLONG*);
 
     };
-}
+};
+
 
