@@ -24,6 +24,9 @@ namespace DxLib {
 		int result = ChangeWindowMode(TRUE);		// ウインドモードで起動 640*480
 		SetMainWindowText("DxLibテストだべ。");
 
+		// 垂直同期なし
+		SetWaitVSyncFlag(FALSE);
+
 		// グラフィックウィンドウへ変更
 		if (DxLib_Init() == -1) return true;
 
