@@ -14,17 +14,10 @@ namespace DxLib {
         void GameLoop();
 
     protected:
-        LONGLONG fpsTimer = GetNowHiPerformanceCount();
+        LONGLONG fpsTimer;
 
-        static constexpr float Radius = 20.0f;
-
-        struct Params {
-            float x;
-            float y;
-        };
-        Params params{};
-
-        virtual void MainGameLoop(Params&) = 0;
+        virtual void BeforeGameLoop() = 0;
+        virtual void MainGameLoop() = 0;
 
         // FPS
         void FpsDraw(LONGLONG*);

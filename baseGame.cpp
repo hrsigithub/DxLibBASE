@@ -5,11 +5,11 @@
 namespace DxLib {
 
 	baseGame::baseGame() {
-		//fpsTimer = GetNowHiPerformanceCount();
-		//params = {};
+		fpsTimer = GetNowHiPerformanceCount();
 	}
 
 	void baseGame::FpsDraw(LONGLONG* p) {
+#ifdef _DEBUG
 
 		static int Fps = 0, FpsCnt = 0;
 		auto now = GetNowHiPerformanceCount();
@@ -23,18 +23,17 @@ namespace DxLib {
 		}
 
 		DrawFormatString(0, 0, COLOR_WHITE, "FPS: %d", Fps);
+#endif
 	}
 
 	void baseGame::GameLoop() {
 
-		params = { 0.0f, 240.0f };
+		BeforeGameLoop();
 
 		while (!ProcessMessage()) {
-
-			ClearDrawScreen();
 	
-			// オーバーライドする。
-			MainGameLoop(params);
+			ClearDrawScreen();
+			MainGameLoop();
 
 			// ScreenFlip();
 		}

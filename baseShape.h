@@ -36,15 +36,11 @@ namespace DxLib {
             {0,    0, 255 },
         };
 
-
         void DrawPixel();
         void DrawLine();
         void DrawBox();
         void DrawCircle();
         void DrawTriangle();
-
-
-
     };
 
 

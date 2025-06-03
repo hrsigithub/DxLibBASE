@@ -5,12 +5,31 @@ namespace DxLib {
 
     ball::ball() {}
 
-    void ball::MainGameLoop(Params& params) {
+    void ball::BeforeGameLoop() {
+        x = Radius;
+        y = 240;
+        speed = SPEED;
 
-        params.x += 0.002f;
+        // 裏バッファへ
+        SetDrawScreen(DX_SCREEN_BACK);
+    }
 
-        DrawCircleAA(params.x, params.y, Radius, 32, COLOR_YELLOW, TRUE);
+    void ball::MainGameLoop() {
 
+        x += speed;
+
+        if (x + Radius >= 640.0f) {
+            x = 640.0f - Radius;
+            speed = -SPEED;
+        }
+        else if (x - Radius < 0.0f) {
+            x = Radius;
+            speed = SPEED;
+        }
+
+        DrawCircleAA(x, y, Radius, 32, COLOR_YELLOW, TRUE);
         FpsDraw(&fpsTimer);
+
+        ScreenFlip();
     }
 }
