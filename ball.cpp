@@ -11,14 +11,14 @@ namespace DxLib {
         SetMainWindowText("ballだべ。");
 
         // 垂直同期なし
-        DxLibWrapper::WaitVSyncFlag = TRUE;
+        //DxLibWrapper::WaitVSyncFlag = TRUE;
 
         // 非アクティブでも動作停止
-        DxLibWrapper::AlwaysRunFlag = FALSE;
+        //DxLibWrapper::AlwaysRunFlag = FALSE;
     }
 
     void ball::BeforeGameLoop() {
-        x = Radius;
+        x = RADIUS;
         y = 240;
         speed = SPEED;
 
@@ -31,16 +31,16 @@ namespace DxLib {
 
         x += speed * deltaTime;
 
-        if (x + Radius >= 640.0f) {
-            x = 640.0f - Radius;
+        if (x + RADIUS >= 640.0f) {
+            x = 640.0f - RADIUS;
             speed = -SPEED;
         }
-        else if (x - Radius < 0.0f) {
-            x = Radius;
+        else if (x - RADIUS < 0.0f) {
+            x = RADIUS;
             speed = SPEED;
         }
 
-        DrawCircleAA(x, y, Radius, 32, COLOR_YELLOW, TRUE);
+        DrawCircleAA(x, y, RADIUS, 32, COLOR_YELLOW, TRUE);
         FpsDraw(&fpsTimer);
 
         ScreenFlip();

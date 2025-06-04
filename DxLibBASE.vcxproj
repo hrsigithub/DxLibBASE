@@ -135,6 +135,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="ballRotation.cpp" />
     <ClCompile Include="baseGame.cpp" />
     <ClCompile Include="baseShape.cpp" />
     <ClCompile Include="DxLibWrapper.cpp" />
@@ -143,6 +144,7 @@
     <ClCompile Include="ソース.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="ballRotation.h" />
     <ClInclude Include="baseGame.h" />
     <ClInclude Include="baseShape.h" />
     <ClInclude Include="DxLibWrapper.h" />

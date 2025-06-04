@@ -24,8 +24,8 @@ namespace DxLib {
 
 		MyInitialize();
 
-		SetWaitVSyncFlag(DxLibWrapper::WaitVSyncFlag);
-		SetAlwaysRunFlag(DxLibWrapper::AlwaysRunFlag);
+		//SetWaitVSyncFlag(DxLibWrapper::WaitVSyncFlag);
+		//SetAlwaysRunFlag(DxLibWrapper::AlwaysRunFlag);
 		
 		// グラフィックウィンドウへ変更
 		if (DxLib_Init() == -1) return true;
@@ -33,17 +33,14 @@ namespace DxLib {
 		return false; // 成功
 	}
 
-
 	void DxLibWrapper::MyInitialize() {
 
 		SetMainWindowText("DxLibテストだべ。");
 
-		// 垂直同期なし
-		DxLibWrapper::WaitVSyncFlag = FALSE;
+		// 垂直同期あり
+		DxLibWrapper::WaitVSyncFlag = TRUE;
 
-		// 非アクティブでも動作
+		
 		DxLibWrapper::AlwaysRunFlag = TRUE;
-
 	}
-
 }

@@ -45,10 +45,8 @@ namespace DxLib {
 
 		while (!ProcessMessage()) {
 	
-			ClearDrawScreen();
+			//ClearDrawScreen();
 			MainGameLoop();
-
-			// ScreenFlip();
 		}
 	}
 }

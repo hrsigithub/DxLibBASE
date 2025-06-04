@@ -7,6 +7,8 @@
 
 #include "Shape.h"
 #include "ball.h"
+#include "ballRotation.h"
+
 
 using namespace DxLib;
 
@@ -16,7 +18,8 @@ int WINAPI WinMain(
 	PSTR lpCmdLine, int nCmdShow)
 {
 	//Shape wr;
-	ball ball;
+//	ball ball;
+	ballRotation ball;
 
 	if (ball.initialize()) return -1;
 
