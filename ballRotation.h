@@ -3,7 +3,7 @@
 #include "ball.h"
 
 namespace DxLib {
-
+	
 	class ballRotation :
 		public ball
 	{
@@ -11,12 +11,12 @@ namespace DxLib {
 		ballRotation();
 
 	protected:
-		void MainGameLoop() override final;
+		void MainGameLoop() override;
 
+		float angle = 0, speedAngle = SPEED_ANGLE;
 	private:
 		static constexpr float SPEED_ANGLE = 360.0f / 2;
 		static constexpr float RADIUS = 50.0f;
-
-		float angle = 0, speedAngle = SPEED_ANGLE;
+		float x, y;
 	};
 };

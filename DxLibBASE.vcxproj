@@ -140,6 +140,7 @@
     <ClCompile Include="baseShape.cpp" />
     <ClCompile Include="DxLibWrapper.cpp" />
     <ClCompile Include="ball.cpp" />
+    <ClCompile Include="polygonRotation.cpp" />
     <ClCompile Include="Shape.cpp" />
     <ClCompile Include="ソース.cpp" />
   </ItemGroup>
@@ -149,6 +150,7 @@
     <ClInclude Include="baseShape.h" />
     <ClInclude Include="DxLibWrapper.h" />
     <ClInclude Include="ball.h" />
+    <ClInclude Include="polygonRotation.h" />
     <ClInclude Include="Shape.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

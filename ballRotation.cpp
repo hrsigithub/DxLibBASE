@@ -8,7 +8,6 @@
 namespace DxLib {
 
     ballRotation::ballRotation() {
-
     }
 
     void ballRotation::MainGameLoop() {
