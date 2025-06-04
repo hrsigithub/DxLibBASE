@@ -10,7 +10,6 @@
 namespace DxLib {
 
 	DxLibWrapper::DxLibWrapper() {
-
 	}
 
 	// 初期化
@@ -22,11 +21,12 @@ namespace DxLib {
 #endif
 
 		int result = ChangeWindowMode(TRUE);		// ウインドモードで起動 640*480
-		SetMainWindowText("DxLibテストだべ。");
 
-		// 垂直同期なし
-		SetWaitVSyncFlag(FALSE);
+		MyInitialize();
 
+		SetWaitVSyncFlag(DxLibWrapper::WaitVSyncFlag);
+		SetAlwaysRunFlag(DxLibWrapper::AlwaysRunFlag);
+		
 		// グラフィックウィンドウへ変更
 		if (DxLib_Init() == -1) return true;
 
@@ -34,6 +34,16 @@ namespace DxLib {
 	}
 
 
+	void DxLibWrapper::MyInitialize() {
 
+		SetMainWindowText("DxLibテストだべ。");
+
+		// 垂直同期なし
+		DxLibWrapper::WaitVSyncFlag = FALSE;
+
+		// 非アクティブでも動作
+		DxLibWrapper::AlwaysRunFlag = TRUE;
+
+	}
 
 }

@@ -14,9 +14,15 @@ namespace DxLib {
 
     class DxLibWrapper {
 
-        public:
-            DxLibWrapper();
+    public:
+        DxLibWrapper();
+        bool initialize();
 
-            bool initialize();
+    protected:
+        // êÇíºìØä˙ê›íË
+        bool WaitVSyncFlag = FALSE;
+        bool AlwaysRunFlag = FALSE;
+
+        virtual void MyInitialize();
     };
 }

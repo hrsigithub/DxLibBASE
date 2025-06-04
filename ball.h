@@ -11,13 +11,14 @@ namespace DxLib {
 	protected:
 		void BeforeGameLoop() override;
 		void MainGameLoop() override;
+		void MyInitialize() override final;
 
 	private:
 		static constexpr float Radius = 20.0f;
 		static constexpr float SPEED = 640.0f / 2;
 
-		float x;
-		float y;
-		float speed;
+		float x = 0;
+		float y = 0;
+		float speed = 0;
 	};
 }

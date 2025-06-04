@@ -15,9 +15,10 @@ int WINAPI WinMain(
 	HINSTANCE hPrevInstance,
 	PSTR lpCmdLine, int nCmdShow)
 {
-	Shape wr;
-	
-	if (wr.initialize()) return -1;
+	//Shape wr;
+	ball ball;
+
+	if (ball.initialize()) return -1;
 
 	//printfDx("Hello World\n");
 
@@ -38,7 +39,6 @@ int WINAPI WinMain(
 	//wr.HilbertCurve();
 	//WaitKey();
 
-	ball ball;
 
 	ball.GameLoop();
 

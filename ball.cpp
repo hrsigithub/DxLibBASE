@@ -3,7 +3,19 @@
 
 namespace DxLib {
 
-    ball::ball() {}
+    ball::ball() {
+    }
+
+    void ball::MyInitialize() {
+
+        SetMainWindowText("ballだべ。");
+
+        // 垂直同期なし
+        DxLibWrapper::WaitVSyncFlag = TRUE;
+
+        // 非アクティブでも動作停止
+        DxLibWrapper::AlwaysRunFlag = FALSE;
+    }
 
     void ball::BeforeGameLoop() {
         x = Radius;

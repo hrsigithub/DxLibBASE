@@ -8,6 +8,10 @@ namespace DxLib {
 		fpsTimer = deltaTimer = GetNowHiPerformanceCount();
 	}
 
+
+	void baseGame::MyInitialize() {
+	}
+
 	float baseGame::getDeltaTime(LONGLONG* p) {
 		LONGLONG now = GetNowHiPerformanceCount();
 		float deltaTime = (float)(now - *p) / 1000000.0f; // sec

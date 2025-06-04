@@ -28,7 +28,7 @@ namespace DxLib {
         virtual void BeforeGameLoop() = 0;
         virtual void MainGameLoop() = 0;
 
-
+        virtual void MyInitialize();
     };
 };
 
