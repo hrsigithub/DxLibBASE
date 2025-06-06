@@ -3,7 +3,7 @@
 #define _USE_MATH_DEFINES
 
 #include <DxLib.h>
-#include <math.h>
+#include <cmath>
 
 #include "DxLibWrapper.h"
 
@@ -23,11 +23,7 @@ namespace DxLib {
 		int result = ChangeWindowMode(TRUE);		// ウインドモードで起動 640*480
 
 		MyInitialize();
-
-		//SetWaitVSyncFlag(DxLibWrapper::WaitVSyncFlag);
-		//SetAlwaysRunFlag(DxLibWrapper::AlwaysRunFlag);
 		
-		// グラフィックウィンドウへ変更
 		if (DxLib_Init() == -1) return true;
 
 		return false; // 成功
@@ -38,9 +34,7 @@ namespace DxLib {
 		SetMainWindowText("DxLibテストだべ。");
 
 		// 垂直同期あり
-		DxLibWrapper::WaitVSyncFlag = TRUE;
-
-		
-		DxLibWrapper::AlwaysRunFlag = TRUE;
+		// DxLibWrapper::WaitVSyncFlag = TRUE;
+		// DxLibWrapper::AlwaysRunFlag = TRUE;
 	}
 }

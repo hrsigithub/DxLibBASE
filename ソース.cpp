@@ -9,43 +9,45 @@
 #include "ball.h"
 #include "ballRotation.h"
 #include "polygonRotation.h"
-
+#include "mouseDraw.h"
 
 using namespace DxLib;
+using namespace DxBall;
+using namespace DxMouse;
 
 int WINAPI WinMain(
 	HINSTANCE hInstance, 
 	HINSTANCE hPrevInstance,
 	PSTR lpCmdLine, int nCmdShow)
 {
-	//Shape wr;
-//	ball ball;
-	//ballRotation ball;
-	polygonRotation ball;
+	//Shape shape;
+    ball ball;
+	ballRotation ballRotation;
+	polygonRotation polygon;
+	mouseDraw target;
 
-	if (ball.initialize()) return -1;
+	if (target.initialize()) return -1;
 
-	//printfDx("Hello World\n");
 
-	//wr.AllDraw();
+	//target.AllDraw();
 
-	//wr.vertical_horizontal_amplitude(baseShape::AmplitudeType::Vertical);
-	//wr.vertical_horizontal_amplitude(baseShape::AmplitudeType::Horizontal);
+	//target.vertical_horizontal_amplitude(baseShape::AmplitudeType::Vertical);
+	//target.vertical_horizontal_amplitude(baseShape::AmplitudeType::Horizontal);
 
 	//WaitKey();
 
-	//wr.circleCurve(baseShape::CircleType::Whirlpool);
+	//target.circleCurve(baseShape::CircleType::Whirlpool);
 
-	//wr.TriangleGasket();
+	//target.TriangleGasket();
 
-	//wr.KochCurveOrSnowflake();
-	//wr.KochCurveOrSnowflake(baseShape::KochType::Snowflake);
+	//target.KochCurveOrSnowflake();
+	//target.KochCurveOrSnowflake(baseShape::KochType::Snowflake);
 
-	//wr.HilbertCurve();
+	//target.HilbertCurve();
 	//WaitKey();
 
 
-	ball.GameLoop();
+	target.GameLoop();
 
 	DxLib_End();
 

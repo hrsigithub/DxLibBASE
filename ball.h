@@ -2,19 +2,18 @@
 
 #include "baseGame.h"
 
-namespace DxLib {
+namespace DxBall {
 
 	class ball : public baseGame {
 	public:
 		ball();
 
 	protected:
+		static constexpr float SPEED = 140.0f / 2.0f;
+
 		void BeforeGameLoop() override;
 		void MainGameLoop() override;
 		void MyInitialize() override;
-
-		// static constexpr float SPEED = 640.0f / 2;
-		static constexpr float SPEED = 140.0f / 2.0f;
 
 		float x = 0;
 		float y = 0;

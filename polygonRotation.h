@@ -1,7 +1,7 @@
 #pragma once
 #include "ballRotation.h"
 
-namespace DxLib {
+namespace DxBall {
 
 class polygonRotation :
         public ballRotation

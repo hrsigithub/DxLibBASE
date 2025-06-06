@@ -2,7 +2,7 @@
 
 #include "ball.h"
 
-namespace DxLib {
+namespace DxBall {
 	
 	class ballRotation :
 		public ball

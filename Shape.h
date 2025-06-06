@@ -3,7 +3,7 @@
 #include "DxLibWrapper.h"
 #include "baseShape.h"
 
-namespace DxLib {
+namespace DxShape {
 
     class Shape : public baseShape
     {
@@ -32,7 +32,5 @@ namespace DxLib {
         void HilbertCurveMove(HilbertCurveType, int n, Pos* p);
         void HilbertCurveMove(HilbertCurveMoveType, Pos* p);
         void HilbertCurveDrawLineAA(float, float, float, float);
-
     };
-
 }

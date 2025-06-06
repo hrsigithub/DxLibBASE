@@ -22,13 +22,10 @@ namespace DxLib {
         // FPS
         virtual void FpsDraw(LONGLONG*) final;
 
-        //---
-
         // オーバーライド必須
+        virtual void MyInitialize();
         virtual void BeforeGameLoop() = 0;
         virtual void MainGameLoop() = 0;
-
-        virtual void MyInitialize();
     };
 };
 

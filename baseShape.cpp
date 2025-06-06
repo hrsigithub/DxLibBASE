@@ -79,8 +79,4 @@ namespace DxLib {
 		::DrawTriangle(555, 90, 505, 190, 605, 190, COLOR_WHITE, TRUE);
 		DrawTriangleAA(555, 280, 505, 380, 605, 380, COLOR_WHITE, TRUE);
 	}
-
-
-
-
 }

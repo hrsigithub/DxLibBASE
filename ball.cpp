@@ -1,7 +1,9 @@
 #include <DxLib.h>
 #include "ball.h"
 
-namespace DxLib {
+using namespace DxLib;
+
+namespace DxBall {
 
     ball::ball() {
     }
@@ -9,12 +11,6 @@ namespace DxLib {
     void ball::MyInitialize() {
 
         SetMainWindowText("ballだべ。");
-
-        // 垂直同期なし
-        //DxLibWrapper::WaitVSyncFlag = TRUE;
-
-        // 非アクティブでも動作停止
-        //DxLibWrapper::AlwaysRunFlag = FALSE;
     }
 
     void ball::BeforeGameLoop() {

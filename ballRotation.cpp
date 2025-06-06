@@ -5,7 +5,9 @@
 
 #include "ballRotation.h"
 
-namespace DxLib {
+using namespace DxLib;
+
+namespace DxBall {
 
     ballRotation::ballRotation() {
     }

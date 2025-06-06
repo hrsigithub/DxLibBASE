@@ -5,7 +5,9 @@
 
 #include "polygonRotation.h"
 
-namespace DxLib {
+using namespace DxLib;
+
+namespace DxBall {
 
     polygonRotation::polygonRotation() {
     }
@@ -47,8 +49,5 @@ namespace DxLib {
         FpsDraw(&fpsTimer);
 
         ScreenFlip();
-
-
     }
-
 }

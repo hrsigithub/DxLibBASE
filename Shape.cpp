@@ -8,9 +8,7 @@
 #include "Shape.h"
 
 
-namespace DxLib {
-
-
+namespace DxShape {
 
 	void Shape::TriangleGasket(int n) {
 
